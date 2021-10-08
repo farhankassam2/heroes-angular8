@@ -68,10 +68,12 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "heroes:build:production"
+              "browserTarget": "heroes:build:production",
+              "port": 8080
             },
             "development": {
-              "browserTarget": "heroes:build:development"
+              "browserTarget": "heroes:build:development",
+              "port": 8080
             }
           },
           "defaultConfiguration": "development"
