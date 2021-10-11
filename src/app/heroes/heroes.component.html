@@ -4,14 +4,29 @@
     <input id="name" [(ngModel)]="selectedHero.name" placeholder="name">
 </div> -->
 <h2> My Heroes </h2>
+<div>
+    <label for="new-hero">Create new hero: </label>
+    <input id="new-hero" [(ngModel)]="newHeroName"/>
+
+    <button class="add-button" (click)="addHero()">
+        Add hero
+    </button>
+</div>
     <ul class="heroes">
             <li *ngFor="let hero of heroes"
                 routerLink="/detail/{{hero.id}}">
                 <!-- [class.selected]="hero === selectedHero" -->
                 <!-- (click)="onSelect(hero)" -->
-                <a>
-                    <span class="badge">{{hero.id}}</span> {{hero.name}}
-                </a>
+                <div id="hero-list-item">
+                    <a>
+                        <span class="badge">{{hero.id}}</span> {{hero.name}}
+                    </a>
+                    <button class="delete" title="delete hero"
+                            (click)="deleteHero(hero)">
+                            x
+                    </button>
+                </div>
+                
             </li> 
     </ul>
 <!-- <app-hero-detail [hero]="selectedHero"></app-hero-detail> -->

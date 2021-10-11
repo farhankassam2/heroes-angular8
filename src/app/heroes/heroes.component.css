@@ -45,3 +45,31 @@
 input {
   padding: 0.5rem;
 }
+
+.add-button {
+  padding: 0.5rem 1.5rem;
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
+.add-button:hover {
+  color: white;
+  background-color: #42545c;
+}
+
+button.delete {
+  background-color: white;
+  color: #525252;
+  font-size: 1.1rem;
+  padding: 1px 10px 3px 10px;
+}
+
+button.delete:hover {
+  background-color: #c20e0e;
+  color: white;
+}
+
+#hero-list-item {
+  justify-content: space-evenly;
+  flex-direction: row;
+}
