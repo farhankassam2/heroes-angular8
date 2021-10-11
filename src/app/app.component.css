@@ -14,8 +14,6 @@ nav a {
 }
 
 .nav-bar {
-  /* animation: 3s ease-in 0s infinite reverse both running; */
-  /* -webkit-animation: 4s linear 0s 1 alternate move_eye; */
   animation: 4s linear 0s 1 alternate move_eye;
   width: 100%;
   /* flexbox */
@@ -28,16 +26,17 @@ nav a {
 
 @keyframes move_eye {
   from {
-    margin-left: 100%;
+    margin-left: 90%;
   }
   to {
-    margin-left: 5%;
+    margin-left: 0%;
   }
 }
 
 nav a:hover {
   color: white;
   background-color: #42545c;
+  cursor: pointer;
 }
 nav a.active {
   background-color: black;

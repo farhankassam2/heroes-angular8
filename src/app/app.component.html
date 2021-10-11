@@ -1,7 +1,7 @@
 <h1> {{title}}</h1>
 <div >
     <nav class="nav-bar">
-        <button *ngIf="_isDetailShowing" (click)="goBack()"> Back </button>
+        <a *ngIf="_isDetailShowing" (click)="goBack()"> Back </a>
         <a routerLink="/dashboard" (click)="isDetailShowing(false)">Dashboard</a>
         <a routerLink="/heroes" (click)="isDetailShowing(false)">Heroes</a>
     </nav>
