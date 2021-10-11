@@ -22,15 +22,15 @@ export class HeroDetailComponent implements OnInit {
     this.getHero();
   }
 
+  //#region Public methods 
   enteringDetailShowing() {
     this.appComponentSingleton.isDetailShowing(true);
   }
-
   getHero(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
     this.heroService.getHero(id).subscribe(hero => {
       this.hero = hero;
       });
   }
-
+  //#endregion
 }
