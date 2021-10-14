@@ -34,8 +34,11 @@ export class HeroDetailComponent implements OnInit {
       });
   }
 
+  // @ts-ignore
   goBack() {
+    if (this.location) {
     this.location.back();
+    }
   }
 
   save():void {
