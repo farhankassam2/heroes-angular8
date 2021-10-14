@@ -1,0 +1,43 @@
+{
+    "extends": "tslint-angular",
+    "rules": {
+        "directive-selector": [
+            true,
+            "attribute",
+            "emos",
+            "camelCase"
+        ],
+        "component-selector": [
+            true,
+            "element",
+            "emos",
+            "kebab-case"
+        ],
+        "ban-ts-ignore": true,
+        "curly": [
+            true,
+            "ignore-same-line"
+        ],
+        "no-unsafe-any": true,
+        "no-empty": [
+            true,
+            "allow-empty-catch"
+        ],
+        "prefer-const": true,
+        "prefer-readonly": true,
+        "quotemark": [
+            true,
+            "double",
+            "avoid-escape"
+        ],
+        "typedef-whitespace": [
+            true,
+            {},
+            {
+                "property-declaration": "onespace",
+                "variable-declaration": "onespace",
+                "call-signature": "onespace"
+            }
+        ]
+    }
+}
