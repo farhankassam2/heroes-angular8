@@ -35,7 +35,7 @@ import { HeroSearchComponent } from './hero-search/hero-search.component';
       InMemoryDataService, { dataEncapsulation: false }
     )
   ],
-  providers: [AppComponent], // only one single instance of AppComponent provided to all other components
+  providers: [AppComponent], // only one single instance of AppComponent provided to all other components that inject this component as a dependency
   bootstrap: [AppComponent]
 })
 export class AppModule { }
