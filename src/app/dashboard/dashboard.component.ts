@@ -5,9 +5,9 @@ import { HeroService } from '../hero.service';
 import { MessageService } from '../message.service';
 
 @Component({
-  selector: 'app-dashboard',
-  templateUrl: './dashboard.component.html',
-  styleUrls: [ './dashboard.component.css' ]
+	selector: 'app-dashboard',
+	templateUrl: './dashboard.component.html',
+	styleUrls: [ './dashboard.component.css' ]
 })
 export class DashboardComponent implements OnInit {
   topHeroes: Hero[] = [];
@@ -15,15 +15,15 @@ export class DashboardComponent implements OnInit {
   constructor(private heroService: HeroService, private messageService: MessageService) { }
 
   ngOnInit() {
-    this.getHeroes();
+  	this.getHeroes();
   }
 
   getHeroes(): void {
-    this.heroService.getHeroes()
-      .subscribe(heroes => {
-        this.topHeroes = heroes.slice(1, 5);
-        this.messageService.add('Dashboard: Top 4 heroes loaded successfully!');
-      });
+  	this.heroService.getHeroes()
+  		.subscribe(heroes => {
+  			this.topHeroes = heroes.slice(1, 5);
+  			this.messageService.add('Dashboard: Top 4 heroes loaded successfully!');
+  		});
     
   }
 }

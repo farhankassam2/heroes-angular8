@@ -14,28 +14,28 @@ import { InMemoryDataService } from './in-memory-data.service';
 import { HeroSearchComponent } from './hero-search/hero-search.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HeroesComponent,
-    HeroDetailComponent,
-    MessagesComponent,
-    DashboardComponent,
-    HeroSearchComponent
-  ],
+	declarations: [
+		AppComponent,
+		HeroesComponent,
+		HeroDetailComponent,
+		MessagesComponent,
+		DashboardComponent,
+		HeroSearchComponent
+	],
   
-  imports: [
-    BrowserModule,
-    FormsModule,
-    AppRoutingModule,
-    HttpClientModule,
-    // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
-    // and returns simulated server responses.
-    // Remove it when a real server is ready to receive requests.
-    HttpClientInMemoryWebApiModule.forRoot(
-      InMemoryDataService, { dataEncapsulation: false }
-    )
-  ],
-  providers: [AppComponent], // only one single instance of AppComponent provided to all other components that inject this component as a dependency
-  bootstrap: [AppComponent]
+	imports: [
+		BrowserModule,
+		FormsModule,
+		AppRoutingModule,
+		HttpClientModule,
+		// The HttpClientInMemoryWebApiModule module intercepts HTTP requests
+		// and returns simulated server responses.
+		// Remove it when a real server is ready to receive requests.
+		HttpClientInMemoryWebApiModule.forRoot(
+			InMemoryDataService, { dataEncapsulation: false }
+		)
+	],
+	providers: [AppComponent], // only one single instance of AppComponent provided to all other components that inject this component as a dependency
+	bootstrap: [AppComponent]
 })
 export class AppModule { }

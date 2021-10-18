@@ -35,6 +35,36 @@
             "prefix": "app",
             "style": "kebab-case"
           }
+        ],
+        "indent": [
+          "error",
+          "tab"
+        ],
+        "curly": [
+          "error"
+        ],
+        "no-var": "warn",
+        "no-unsafe-optional-chaining": "error",
+        "no-unsafe-finally": "error",
+        "no-unsafe-negation": [
+          "error",
+          {
+            "enforceForOrderingRelations": true
+          }
+        ],
+        "no-duplicate-case": "error",
+        "no-duplicate-imports": "warn",
+        "no-empty": [
+          "error",
+          {
+            "allowEmptyCatch": true
+          }
+        ],
+        "no-invalid-this": [
+          "error",
+          {
+            "capIsConstructor": false
+          }
         ]
       }
     },
