@@ -18,7 +18,7 @@
       "extends": [
         "plugin:@angular-eslint/recommended",
         "plugin:@angular-eslint/template/process-inline-templates",
-        "plugin:jsdoc/recommended"
+        "plugin:jsdoc/recommended" // need to run "npm install --save-dev eslint-plugin-jsdoc" to use this plugin
       ],
       "rules": {
         // To disable any particular rule, the following can be written as a comment on the line to disable: // eslint-disable-line no-undef-init
@@ -53,10 +53,6 @@
         "array-bracket-spacing": [
           "error",
           "never"
-          // {
-          //   "objectInArrays": true,
-          //   "arraysInArrays": true
-          // }
         ],
         "keyword-spacing": "error",
         "key-spacing": [
