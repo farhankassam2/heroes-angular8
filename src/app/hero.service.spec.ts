@@ -19,7 +19,7 @@ describe("HeroService", () => {
     it("asking for a hero detail by id specified in the query parameter returns the corresponding hero object with identical id",
         () => {
             const narcos: Hero = { id: 12, name: "Narcos" };
-            const heroFromService = service.getHero(12).subscribe((hero) => {
+            service.getHero(12).subscribe((hero) => {
                 expect(hero).toBe(narcos);
             })
         });
