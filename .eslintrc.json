@@ -40,8 +40,36 @@
           "error",
           "tab"
         ],
+        "prefer-const": "error",
         "curly": [
           "error"
+        ],
+        "object-curly-spacing": [
+          "error",
+          "always"
+        ],
+        "array-bracket-spacing": [
+          "error",
+          "always",
+          {
+            "singleValue": false
+          }
+        ],
+        "keyword-spacing": "error",
+        "key-spacing": [
+          "error",
+          {
+            "align": "colon"
+          }
+        ],
+        "spaced-comment": [
+          "error",
+          "always",
+          {
+            "markers": [
+              "/"
+            ]
+          }
         ],
         "no-var": "warn",
         "no-unsafe-optional-chaining": "error",
@@ -54,18 +82,78 @@
         ],
         "no-duplicate-case": "error",
         "no-duplicate-imports": "warn",
+        "no-dupe-keys": "error",
         "no-empty": [
           "error",
           {
             "allowEmptyCatch": true
           }
         ],
+        "no-unneeded-ternary": "error",
         "no-invalid-this": [
           "error",
           {
             "capIsConstructor": false
           }
-        ]
+        ],
+        "no-unused-vars": [
+          "warn",
+          {
+            "vars": "local"
+          }
+        ],
+        "prefer-object-spread": "error",
+        "prefer-template": "error",
+        "no-this-before-super": "error",
+        "no-extra-bind": "error",
+        "no-useless-constructor": "error",
+        "no-useless-return": "error",
+        "no-useless-rename": "error",
+        "no-useless-escape": "error",
+        "no-extra-parens": "warn",
+        "no-lonely-if": "warn",
+        "use-isnan": "error",
+        "arrow-parens": [
+          "error",
+          "as-needed",
+          {
+            "requireForBlockBody": true
+          }
+        ],
+        "arrow-spacing": "error",
+        "implicit-arrow-linebreak": [
+          "error",
+          "beside"
+        ],
+        "no-dupe-else-if": "warn",
+        "no-confusing-arrow": "error",
+        "no-constant-condition": "error",
+        "quote-props": [
+          "error",
+          "as-needed",
+          {
+            "keywords": true,
+            "numbers": true // https://eslint.org/docs/rules/quote-props: 1e2 and 100 are coerced into strings before getting used as the property name. Both String(1e2) and String(100) happen to be equal to "100", which causes the "Duplicate data property in object literal not allowed in strict mode" error. Issues like that can be tricky to debug, so some prefer to require quotes around object keys that are numbers
+          }
+        ],
+        "no-inline-comments": "warn",
+        "multiline-comment-style": [
+          "error",
+          "starred-block"
+        ],
+        "default-case-last": "error",
+        "camelcase": "error",
+        "no-fallthrough": "error",
+        "func-names": [
+          "error",
+          "as-needed"
+        ],
+        "object-shorthand": [
+          "warn"
+        ],
+        "no-self-compare": "error",
+        "wrap-regex": "error",
+        "sort-imports": "error"
       }
     },
     {
