@@ -1,18 +1,18 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { Hero } from '../hero';
-import { HeroService } from '../hero.service';
-import { AppComponent } from '../app.component';
-import { Location } from '@angular/common';
+import { Component, Input, OnInit } from "@angular/core";
+import { ActivatedRoute } from "@angular/router";
+import { Hero } from "../hero";
+import { HeroService } from "../hero.service";
+import { AppComponent } from "../app.component";
+import { Location } from "@angular/common";
 @Component({
-	selector: 'app-hero-detail',
-	templateUrl: './hero-detail.component.html',
-	styleUrls: ['./hero-detail.component.css']
+    selector   : "app-hero-detail",
+    templateUrl: "./hero-detail.component.html",
+    styleUrls  : ["./hero-detail.component.css"]
 })
 export class HeroDetailComponent implements OnInit {
   @Input() hero?: Hero;
 
-  constructor(  private route: ActivatedRoute,
+  constructor(private route: ActivatedRoute,
                 private heroService: HeroService,
                 public appComponentSingleton: AppComponent,
                 private location: Location
@@ -23,13 +23,13 @@ export class HeroDetailComponent implements OnInit {
   	this.getHero();
   }
 
-  //#region Public methods 
+  // #region Public methods
   enteringDetailShowing() {
   	this.appComponentSingleton.isDetailShowing(true);
   }
   getHero(): void {
-  	let id = Number(this.route.snapshot.paramMap.get('id'));
-  	this.heroService.getHero(id).subscribe(hero => {
+  	const id = Number(this.route.snapshot.paramMap.get("id"));
+  	this.heroService.getHero(id).subscribe((hero) => {
   		this.hero = hero;
   	});
   }
@@ -37,14 +37,14 @@ export class HeroDetailComponent implements OnInit {
   // @ts-ignore
   goBack() {
   	if (this.location)
-    { this.location.back(); }
+      { this.location.back(); }
   }
 
   save():void {
-  	if (this.hero) 
-  		{this.heroService.updateHero(this.hero)
-  			.subscribe(() => this.goBack());}
-  	
+  	if (this.hero)
+  		{ this.heroService.updateHero(this.hero)
+  			.subscribe(() => this.goBack()); }
+
   }
-  //#endregion
+  // #endregion
 }

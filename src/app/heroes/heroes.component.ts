@@ -1,16 +1,16 @@
-import { Component, OnInit } from '@angular/core';
-import { Hero } from '../hero';
-import { HeroService } from '../hero.service';
-import { MessageService } from '../message.service';
+import { Component, OnInit } from "@angular/core";
+import { Hero } from "../hero";
+import { HeroService } from "../hero.service";
+import { MessageService } from "../message.service";
 
 @Component({
-	selector: 'app-heroes',
-	templateUrl: './heroes.component.html',
-	styleUrls: ['./heroes.component.css']
+    selector   : "app-heroes",
+    templateUrl: "./heroes.component.html",
+    styleUrls  : ["./heroes.component.css"]
 })
 export class HeroesComponent implements OnInit {
   heroes: Hero[] = [];
-  newHeroName: string = '';
+  newHeroName: string = "";
   constructor(private heroService: HeroService) {
   }
 
@@ -26,11 +26,11 @@ export class HeroesComponent implements OnInit {
 
   addHero(): void {
   	this.newHeroName = this.newHeroName.trim();
-  	if (!this.newHeroName)  {return;} 
+  	if (!this.newHeroName)  { return; }
   	this.heroService.addHero({ name: this.newHeroName } as Hero)
   		.subscribe(() => {
   			this.getHeroes(); // want to call a new getHeroes() after having added a hero so as to retrieve most up to date list
-  			this.newHeroName = '';
+  			this.newHeroName = "";
   		});
   }
 

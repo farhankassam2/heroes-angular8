@@ -1,10 +1,10 @@
-import { Location } from '@angular/common';
-import { Component } from '@angular/core';
+import { Location } from "@angular/common";
+import { Component } from "@angular/core";
 
 @Component({
-	selector: 'app-root',
-	templateUrl: './app.component.html',
-	styleUrls: ['./app.component.css'],
+    selector   : "app-root",
+    templateUrl: "./app.component.html",
+    styleUrls  : ["./app.component.css"],
 })
 export class AppComponent {
   public _isDetailShowing: boolean = false;
@@ -13,7 +13,7 @@ export class AppComponent {
   	this._isDetailShowing = value;
   }
   constructor(private location: Location) {}
-  title = 'Tour of Heroes';
+  title = "Tour of Heroes";
 
   goBack(): void {
   	this.isDetailShowing(false);

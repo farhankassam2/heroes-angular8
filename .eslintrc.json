@@ -17,9 +17,11 @@
       },
       "extends": [
         "plugin:@angular-eslint/recommended",
-        "plugin:@angular-eslint/template/process-inline-templates"
+        "plugin:@angular-eslint/template/process-inline-templates",
+        "plugin:jsdoc/recommended"
       ],
       "rules": {
+        // To disable any particular rule, the following can be written as a comment on the line to disable: // eslint-disable-line no-undef-init
         "@angular-eslint/directive-selector": [
           "error",
           {
@@ -38,7 +40,7 @@
         ],
         "indent": [
           "error",
-          "tab"
+          4
         ],
         "prefer-const": "error",
         "curly": [
@@ -50,10 +52,11 @@
         ],
         "array-bracket-spacing": [
           "error",
-          "always",
-          {
-            "singleValue": false
-          }
+          "never"
+          // {
+          //   "objectInArrays": true,
+          //   "arraysInArrays": true
+          // }
         ],
         "keyword-spacing": "error",
         "key-spacing": [
@@ -74,6 +77,7 @@
         "no-var": "warn",
         "no-unsafe-optional-chaining": "error",
         "no-unsafe-finally": "error",
+        "no-undef-init": "error",
         "no-unsafe-negation": [
           "error",
           {
@@ -106,7 +110,8 @@
         "prefer-template": "error",
         "no-this-before-super": "error",
         "no-extra-bind": "error",
-        "no-useless-constructor": "error",
+        "no-use-before-define": "warn",
+        // https://eslint.org/docs/rules/no-use-before-define: Best to always declare variables, functions and classes, before using them. In ES6, block-level bindings (let and const) introduce a "temporal dead zone" where a ReferenceError will be thrown with any attempt to access the variable before its declaration.
         "no-useless-return": "error",
         "no-useless-rename": "error",
         "no-useless-escape": "error",
@@ -126,6 +131,7 @@
           "beside"
         ],
         "no-dupe-else-if": "warn",
+        "no-dupe-args": "error",
         "no-confusing-arrow": "error",
         "no-constant-condition": "error",
         "quote-props": [
@@ -136,9 +142,16 @@
             "numbers": true // https://eslint.org/docs/rules/quote-props: 1e2 and 100 are coerced into strings before getting used as the property name. Both String(1e2) and String(100) happen to be equal to "100", which causes the "Duplicate data property in object literal not allowed in strict mode" error. Issues like that can be tricky to debug, so some prefer to require quotes around object keys that are numbers
           }
         ],
+        "quotes": [
+          "error",
+          "double",
+          {
+            "avoidEscape": true
+          }
+        ],
         "no-inline-comments": "warn",
         "multiline-comment-style": [
-          "error",
+          "warn",
           "starred-block"
         ],
         "default-case-last": "error",
@@ -153,7 +166,60 @@
         ],
         "no-self-compare": "error",
         "wrap-regex": "error",
-        "sort-imports": "error"
+        "sort-imports": "error",
+        "no-else-return": "warn",
+        "max-len": [
+          "error",
+          {
+            "code": 120,
+            "ignoreStrings": false
+          }
+        ],
+        "new-parens": "error",
+        "no-multiple-empty-lines": [
+          "error",
+          {
+            "max": 2
+          }
+        ],
+        "no-trailing-spaces": "error",
+        "no-irregular-whitespace": [
+          "error",
+          {
+            "skipStrings": true,
+            "skipRegExps": true,
+            "skipTemplates": true
+          }
+        ],
+        "block-spacing": [
+          "error",
+          "always"
+        ],
+        "block-scoped-var": "error",
+        "no-whitespace-before-property": "error",
+        "space-before-function-paren": [
+          "warn",
+          "never"
+        ],
+        "space-in-parens": [
+          "error",
+          "never"
+        ],
+        "func-call-spacing": [
+          "error",
+          "never"
+        ],
+        "comma-spacing": [
+          "error",
+          {
+            "before": false,
+            "after": true
+          }
+        ],
+        "template-curly-spacing": [
+          "error",
+          "never"
+        ]
       }
     },
     {
