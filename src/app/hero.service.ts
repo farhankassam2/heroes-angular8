@@ -23,9 +23,10 @@ export class HeroService {
   /* GET heroes from the server */
   getHeroes(): Observable<Hero[]> {
   	// const heroes = of(HEROES);
-  	return this.http.get<Hero[]>(this.heroesUrl) // returns an Observable<Hero[]> type
+      return this.http.get<Hero[]>(this.heroesUrl)
+      // returns an Observable<Hero[]> type
   		.pipe(
-  			tap(_ => this.log("fetched ALL heroes successfully!")),
+  			tap(() => this.log("fetched ALL heroes successfully!")),
   			catchError(this.handleError<Hero[]>("getHeroes", []))
   		);
   }
@@ -33,6 +34,7 @@ export class HeroService {
   /**
    * GET hero by id. Will 404 if id not found
    *
+   * @returns Promised Hero
    * @param id
    */
   getHero(id: number): Observable<Hero> {
@@ -95,7 +97,7 @@ export class HeroService {
   		{ return of([]); }
 
   	return this.http.get<Hero[]>(`${this.heroesUrl}/?name=${term}`).pipe(
-  		tap(x => x.length ? this.log(`found heroes matching "${term}"`) : this.log(`no heroes matching "${term}"`)),
+  		tap(x => (x.length ? this.log(`found heroes matching "${term}"`) : this.log(`no heroes matching "${term}"`))),
   		catchError(this.handleError<Hero[]>("searchHeroes", []))
   	);
   }
@@ -113,6 +115,7 @@ export class HeroService {
    * Handle Http operation that failed.
    * Let the app continue.
    *
+   * @returns result of unknown type T
    * @param operation - name of the operation that failed
    * @param result - optional value to return as the observable result
    */

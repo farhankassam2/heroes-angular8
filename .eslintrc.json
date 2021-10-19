@@ -115,7 +115,6 @@
         "no-useless-return": "error",
         "no-useless-rename": "error",
         "no-useless-escape": "error",
-        "no-extra-parens": "warn",
         "no-lonely-if": "warn",
         "use-isnan": "error",
         "arrow-parens": [
@@ -166,13 +165,13 @@
         ],
         "no-self-compare": "error",
         "wrap-regex": "error",
-        "sort-imports": "error",
+        "sort-imports": "warn",
         "no-else-return": "warn",
         "max-len": [
           "error",
           {
             "code": 120,
-            "ignoreStrings": false
+            "ignoreStrings": true
           }
         ],
         "new-parens": "error",
