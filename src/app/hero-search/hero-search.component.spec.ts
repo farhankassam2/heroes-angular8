@@ -1,16 +1,15 @@
-import { ComponentFixture, TestBed } from "@angular/core/testing";
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HeroSearchComponent } from "./hero-search.component";
+import { HeroSearchComponent } from './hero-search.component';
 
-describe("HeroSearchComponent", () => {
+describe('HeroSearchComponent', () => {
     let component: HeroSearchComponent;
     let fixture: ComponentFixture<HeroSearchComponent>;
 
-    beforeEach(async() => {
+    beforeEach(async () => {
         await TestBed.configureTestingModule({
             declarations: [HeroSearchComponent]
-        })
-            .compileComponents();
+        }).compileComponents();
     });
 
     beforeEach(() => {
@@ -19,7 +18,7 @@ describe("HeroSearchComponent", () => {
         fixture.detectChanges();
     });
 
-    it("should create", () => {
+    it('should create', () => {
         expect(component).toBeTruthy();
     });
 });
