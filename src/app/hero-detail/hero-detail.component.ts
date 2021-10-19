@@ -5,9 +5,9 @@ import { HeroService } from '../hero.service';
 import { AppComponent } from '../app.component';
 import { Location } from '@angular/common';
 @Component({
-    selector: 'app-hero-detail',
+    selector   : 'app-hero-detail',
     templateUrl: './hero-detail.component.html',
-    styleUrls: ['./hero-detail.component.css']
+    styleUrls  : ['./hero-detail.component.css']
 })
 export class HeroDetailComponent implements OnInit {
     @Input() hero?: Hero;

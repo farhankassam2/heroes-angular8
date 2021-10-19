@@ -4,9 +4,9 @@ import { HeroService } from '../hero.service';
 import { MessageService } from '../message.service';
 
 @Component({
-    selector: 'app-heroes',
+    selector   : 'app-heroes',
     templateUrl: './heroes.component.html',
-    styleUrls: ['./heroes.component.css']
+    styleUrls  : ['./heroes.component.css']
 })
 export class HeroesComponent implements OnInit {
     heroes: Hero[] = [];
@@ -18,7 +18,7 @@ export class HeroesComponent implements OnInit {
     }
 
     getHeroes(): void {
-        this.heroService.getHeroes().subscribe((heroes) => (this.heroes = heroes));
+        this.heroService.getHeroes().subscribe(heroes => (this.heroes = heroes));
     }
 
     addHero(): void {
@@ -34,7 +34,7 @@ export class HeroesComponent implements OnInit {
     }
 
     deleteHero(hero: Hero): void {
-        this.heroes = this.heroes.filter((h) => h.id !== hero.id);
+        this.heroes = this.heroes.filter(h => h.id !== hero.id);
         // deletes before server deletion has been successful, otherwise it will try to render a non-existent hero.
         this.heroService.deleteHero(hero.id).subscribe(() => {});
     }
