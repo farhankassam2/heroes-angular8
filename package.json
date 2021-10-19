@@ -45,11 +45,18 @@
     "@typescript-eslint/parser": "^4.28.2",
     "eslint": "^7.26.0",
     "eslint-plugin-jsdoc": "^36.1.1",
+    "husky": "^7.0.2",
     "jasmine-core": "~3.8.0",
     "karma": "~6.3.0",
     "karma-chrome-launcher": "~3.1.0",
     "karma-coverage": "~2.0.3",
     "karma-jasmine": "~4.0.0",
-    "karma-jasmine-html-reporter": "~1.7.0"
+    "karma-jasmine-html-reporter": "~1.7.0",
+    "pretty-quick": "^3.1.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsc && pretty-quick - staged && ng lint --fix"
+    }
   }
 }

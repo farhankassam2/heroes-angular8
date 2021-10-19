@@ -1,3 +1,5 @@
+// 1) run "npm install --save-dev eslint" to install eslint in current project directory
+// 2) install the eslint VsCode plugin and restart the IDE
 {
   "root": true,
   "ignorePatterns": [
@@ -21,7 +23,7 @@
         "plugin:jsdoc/recommended" // need to run "npm install --save-dev eslint-plugin-jsdoc" to use this plugin
       ],
       "rules": {
-        // To disable any particular rule, the following can be written as a comment on the line to disable: // eslint-disable-line no-undef-init
+        // To disable any particular rule, the following can be written as a comment on the line to disable: // eslint-disable-line <rule-title>
         "@angular-eslint/directive-selector": [
           "error",
           {
@@ -166,7 +168,7 @@
         "max-len": [
           "error",
           {
-            "code": 120,
+            "code": 140,
             "ignoreStrings": true
           }
         ],
