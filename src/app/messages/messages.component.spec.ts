@@ -6,7 +6,7 @@ describe('MessagesComponent', () => {
     let component: MessagesComponent;
     let fixture: ComponentFixture<MessagesComponent>;
 
-    beforeEach(async() => {
+    beforeEach(async () => {
         await TestBed.configureTestingModule({
             declarations: [MessagesComponent]
         }).compileComponents();

@@ -6,7 +6,7 @@ describe('HeroSearchComponent', () => {
     let component: HeroSearchComponent;
     let fixture: ComponentFixture<HeroSearchComponent>;
 
-    beforeEach(async() => {
+    beforeEach(async () => {
         await TestBed.configureTestingModule({
             declarations: [HeroSearchComponent]
         }).compileComponents();
