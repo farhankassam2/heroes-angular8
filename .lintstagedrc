@@ -1,6 +1,0 @@
-{
-    "*.{ts,html}": [
-      "npm run prettier-format",
-      "npm run lint"
-    ]
-}

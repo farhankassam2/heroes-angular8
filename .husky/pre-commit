@@ -4,6 +4,6 @@
 
 # npx lint-staged --debug
 
-# npm run pretty-quick --staged && npm run lint
+npm run lint
 
-bash ./lint-staged --fix
+# bash ./lint-staged --fix

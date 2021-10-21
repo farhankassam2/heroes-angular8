@@ -12,8 +12,8 @@ export class MessagesComponent {
      * and we need to bind messageService into the HTML template.
      *
      */
-    private legend = "legend";
+    private legend = 'legend';
     constructor(public messageService: MessageService) {
-this.legend = "legendary";
+                    this.legend = 'legendary';
     }
 }
