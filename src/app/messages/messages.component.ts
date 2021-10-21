@@ -11,7 +11,7 @@ export class MessagesComponent {
      * below messageService is made public because Angular only binds to public component properties
      * and we need to bind messageService into the HTML template.
      *
-     */
+*/
     private legend = "legend";
     constructor(public messageService: MessageService) {
         this.legend = "legendary";
