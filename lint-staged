@@ -5,7 +5,7 @@ if [ ${#fileList} -lt 1 ]; then
     echo -e "You have no staged .js or .vue files to test\n"
     exit
 fi
-npx eslint ${fileList[*]} "$@"
+npx eslint ${fileList[*]} "$@" --fix
 if [ $? -ne 0 ]; then
     echo -e "\nPlease fix the above linting issues before committing.\n"
     exit 1
