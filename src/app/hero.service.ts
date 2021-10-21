@@ -58,7 +58,7 @@ export class HeroService {
      */
     updateHero(hero: Hero): Observable<any> {
         return this.http.put(this.heroesUrl, hero, this.httpOptions).pipe(
-            tap((_) => this.log(`updated hero with id: ${hero.id}`)),
+            tap(_ => this.log(`updated hero with id: ${hero.id}`)),
             catchError(this.handleError<any>('updateHero'))
         );
     }
@@ -84,7 +84,7 @@ export class HeroService {
         const url = `${this.heroesUrl}/${id}`;
 
         return this.http.delete<Hero>(url, this.httpOptions).pipe(
-            tap((_) => this.log(`deleted hero with id: ${id}`)),
+            tap(_ => this.log(`deleted hero with id: ${id}`)),
             catchError(this.handleError<Hero>('deleteHero'))
         );
     }
@@ -100,7 +100,7 @@ export class HeroService {
         }
 
         return this.http.get<Hero[]>(`${this.heroesUrl}/?name=${term}`).pipe(
-            tap((x) => (x.length ? this.log(`found heroes matching "${term}"`) : this.log(`no heroes matching "${term}"`))),
+            tap(x => (x.length ? this.log(`found heroes matching "${term}"`) : this.log(`no heroes matching "${term}"`))),
             catchError(this.handleError<Hero[]>('searchHeroes', []))
         );
     }
