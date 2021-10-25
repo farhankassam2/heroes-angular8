@@ -15,6 +15,5 @@ export class MessagesComponent {
     private legend = 'legend';
     constructor(public messageService: MessageService) {
         this.legend = 'legendary';
-        const k = 5;
     }
 }
