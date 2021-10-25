@@ -36,13 +36,7 @@ export class HeroDetailComponent implements OnInit {
     }
 
     goBack() {
-                        if (this.location) {
- this.location.back();
-
-                            
-                            
-                            
-                        }
+        this.location.back();
     }
 
     save(): void {
