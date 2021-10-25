@@ -1,0 +1,2 @@
+# Start by ignoring all by default
+src/**/*.js
