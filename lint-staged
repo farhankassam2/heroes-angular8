@@ -1,4 +1,8 @@
 #!/bin/bash
+
+## Looks for staged .ts and .html files, and only runs them against the linter, as opposed to the whole codebase --> more efficient.
+
+
 clear
 fileList=$(git diff --diff-filter=d --cached --name-only | grep -E '\.(ts|html)$')
 if [ ${#fileList} -lt 1 ]; then
