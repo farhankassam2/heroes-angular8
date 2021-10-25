@@ -8,4 +8,4 @@
 
 # bash ./lint-staged --fix
 
-bash ./lint-staged --fix
+bash ./lint-staged
