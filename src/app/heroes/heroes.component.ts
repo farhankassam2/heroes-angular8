@@ -10,11 +10,24 @@ import { MessageService } from '../message.service';
 })
 export class HeroesComponent implements OnInit {
     heroes: Hero[] = [];
-    newHeroName: string = '';
+    private _newHeroName: string = '';
+    /*
+     * ! suffix indicates that "this expression cannot be null or undefined here, so don't complain about the
+     * possibility of it being null or undefined."
+     */
+    public get newHeroName(): string {
+        return this._newHeroName;
+    }
+    public set newHeroName(value: string) {
+        this._newHeroName = value;
+    }
+    // currentStyles: Record<string, string> = {};
+
     constructor(private heroService: HeroService) {}
 
     ngOnInit(): void {
         this.getHeroes();
+        // this.setCurrentStyles();
     }
 
     getHeroes(): void {
@@ -38,4 +51,13 @@ export class HeroesComponent implements OnInit {
         // deletes before server deletion has been successful, otherwise it will try to render a non-existent hero.
         this.heroService.deleteHero(hero.id).subscribe(() => {});
     }
+
+    /*
+     * setCurrentStyles() {
+     *     this.currentStyles = {
+     *         'color'             : this.newHeroName.length > 0 ? 'white' : 'blue',
+     *         'background-color': this.newHeroName.length > 0 ? 'blue' : 'white'
+     *     };
+     * }
+     */
 }

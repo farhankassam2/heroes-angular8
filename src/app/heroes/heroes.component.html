@@ -6,27 +6,50 @@
 <h2> My Heroes </h2>
 <div>
     <label for="new-hero">Create new hero: </label>
-    <input id="new-hero" [(ngModel)]="newHeroName"/>
+    <input id="new-hero" [ngModel]="newHeroName" (ngModelChange)="newHeroName = $event"/>
 
-    <button class="add-button" (click)="addHero()">
+    <button [ngClass]="newHeroName ? 'add-button' : 'add-button-disabled'" (click)="addHero()" [disabled]="!newHeroName.length">
         Add hero
     </button>
 </div>
     <ul class="heroes">
             <li *ngFor="let hero of heroes"
-                routerLink="/detail/{{hero.id}}">
+                routerLink="/detail/{{hero.id}}"
+                [ngSwitch]="hero.id">
                 <!-- [class.selected]="hero === selectedHero" -->
                 <!-- (click)="onSelect(hero)" -->
-                <div id="hero-list-item">
+                <div id="hero-list-item" *ngSwitchCase=11 id="first">
+                        <a>
+                            <span class="badge">{{hero.id}}</span> {{hero.name}}
+                        </a>
+                        <button class="delete" title="delete hero" (click)="deleteHero(hero)">
+                            x
+                        </button>
+                </div>
+                    <div id="hero-list-item" *ngSwitchCase=12 id="second">
+                        <a>
+                            <span class="badge">{{hero.id}}</span> {{hero.name}}
+                        </a>
+                        <button class="delete" title="delete hero" (click)="deleteHero(hero)">
+                            x
+                        </button>
+                    </div>
+                <div id="hero-list-item" *ngSwitchCase=13 id="third">
                     <a>
                         <span class="badge">{{hero.id}}</span> {{hero.name}}
                     </a>
-                    <button class="delete" title="delete hero"
-                            (click)="deleteHero(hero)">
-                            x
+                    <button class="delete" title="delete hero" (click)="deleteHero(hero)">
+                                                    x
                     </button>
                 </div>
-                
+                <div id ="hero-list-item" *ngSwitchDefault>
+                    <a>
+                        <span class="badge">{{hero.id}}</span> {{hero.name}}
+                    </a>
+                       <button class="delete" title="delete hero" (click)="deleteHero(hero)">
+                            x
+                      </button>
+                   </div>                
             </li> 
     </ul>
 <!-- <app-hero-detail [hero]="selectedHero"></app-hero-detail> -->

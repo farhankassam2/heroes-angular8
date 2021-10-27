@@ -1,75 +1,100 @@
 /* HeroesComponent's private CSS styles */
 .heroes {
-  margin: 0 0 2em 0;
-  list-style-type: none;
-  padding: 0;
-  width: 15em;
+    margin: 0 0 2em 0;
+    list-style-type: none;
+    padding: 0;
+    width: 15em;
 }
 .heroes li {
-  cursor: pointer;
-  position: relative;
-  left: 0;
-  background-color: #eee;
-  margin: 0.5em;
-  padding: 0.3em 0;
-  height: 1.6em;
-  border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+    left: 0;
+    background-color: #eee;
+    margin: 0.5em;
+    padding: 0.3em 0;
+    height: 1.6em;
+    border-radius: 4px;
 }
 .heroes li:hover {
-  color: #2c3a41;
-  /* background-color: #e6e6e6; */
-  opacity: 0.5;
-  left: 0.1em;
+    color: #2c3a41;
+    /* background-color: #e6e6e6; */
+    opacity: 0.5;
+    left: 0.1em;
 }
 
 .heroes a {
-  text-decoration: none;
-  color: black;
+    text-decoration: none;
+    color: black;
 }
 
 .heroes .badge {
-  display: inline-block;
-  font-size: small;
-  color: white;
-  padding: 0.8em 0.7em 0 0.7em;
-  background-color: #405061;
-  line-height: 1em;
-  position: relative;
-  left: -1px;
-  top: -4px;
-  height: 1.8em;
-  margin-right: 0.8em;
-  border-radius: 4px 0 0 4px;
+    display: inline-block;
+    font-size: small;
+    color: white;
+    padding: 0.8em 0.7em 0 0.7em;
+    background-color: #405061;
+    line-height: 1em;
+    position: relative;
+    left: -1px;
+    top: -4px;
+    height: 1.8em;
+    margin-right: 0.8em;
+    border-radius: 4px 0 0 4px;
 }
 
 input {
-  padding: 0.5rem;
+    padding: 0.5rem;
 }
 
 .add-button {
-  padding: 0.5rem 1.5rem;
-  font-size: 1rem;
-  margin-bottom: 2rem;
+    padding: 0.5rem 1.5rem;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    color: blue;
 }
 
 .add-button:hover {
-  color: white;
-  background-color: #42545c;
+    color: white;
+    background-color: #42545c;
+    cursor: pointer;
+}
+.add-button-disabled:hover {
+    color: grey;
+    background-color: #eee;
+    cursor: auto;
+}
+.add-button-disabled {
+    padding: 0.5rem 1.5rem;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    color: grey;
+    background-color: #eee;
 }
 
 button.delete {
-  background-color: white;
-  color: #525252;
-  font-size: 1.1rem;
-  padding: 1px 10px 3px 10px;
+    background-color: white;
+    color: #525252;
+    font-size: 1.1rem;
+    padding: 1px 10px 3px 10px;
 }
 
 button.delete:hover {
-  background-color: #c20e0e;
-  color: white;
+    background-color: #c20e0e;
+    color: white;
 }
 
 #hero-list-item {
-  justify-content: space-evenly;
-  flex-direction: row;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
+
+#first {
+  background-color: hotpink;
+  color: hotpink;
+}
+#second {
+  background-color: indigo;
+}
+#third {
+  background-color: indianred;
 }

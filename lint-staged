@@ -9,7 +9,7 @@ if [ ${#fileList} -lt 1 ]; then
     echo -e "You have no staged .ts or .html files to test\n"
     exit
 fi
-npx eslint ${fileList[*]} "$@"
+npx eslint ${fileList[*]} "$@" ## --fix is a positional parameter acquired from within the calling command via "$@" here.
 if [ $? -ne 0 ]; then
     echo -e "\nPlease fix the above linting issues before committing.\n"
     exit 1
