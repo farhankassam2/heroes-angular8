@@ -16,7 +16,10 @@ export class HeroService {
     private heroesUrl = 'api/heroes'; // URL to web api of the format :base/:collectionName
 
     private httpOptions = {
-        headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+        headers: new HttpHeaders({
+            'Content-Type'           : 'application/json',
+            'Content-Security-Policy': "script-src 'self'; style-src 'self' 'unsafe-inline'",
+        })
     };
 
     /* GET heroes from the server */

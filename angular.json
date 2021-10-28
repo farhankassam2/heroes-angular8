@@ -32,6 +32,9 @@
             "scripts": []
           },
           "configurations": {
+            "headers": {
+              "Content-Security-Policy": "trusted-types angular; require-trusted=types-for 'script'"
+            },
             "production": {
               "budgets": [
                 {

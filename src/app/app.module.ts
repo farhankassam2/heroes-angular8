@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, DomSanitizer } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
@@ -26,7 +26,7 @@ import { HeroSearchComponent } from './hero-search/hero-search.component';
          * and returns simulated server responses.
          * Remove it when a real server is ready to receive requests.
          */
-        HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, { dataEncapsulation: false })
+        HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, { dataEncapsulation: false }),
     ],
     /*
      * only one single instance of AppComponent provided to all other components that inject this
