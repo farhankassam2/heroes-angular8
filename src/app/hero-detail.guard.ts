@@ -17,6 +17,7 @@ export class HeroDetailGuard implements CanActivate {
       Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
 
         const heroId = Number(route.paramMap.get('id'));
+        // TODO: make the below work with the http call
         /*
          * const value = this.heroService.getHeroes().subscribe((heroes) => {
          *     const heroExists = heroes.find(hero => hero.id == heroId);
