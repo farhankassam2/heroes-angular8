@@ -36,6 +36,18 @@ export class HeroService {
         );
     }
 
+    // /* Determines if hero detail route is valid */
+    async doesHeroExist(heroId: number): Promise<boolean> {
+        return new Promise(async(resolve) => {
+            try {
+                await this.getHero(heroId).toPromise();
+                return resolve(true);
+            } catch (err) {
+                return resolve(false);
+            }
+        });
+    }
+
     /**
      * GET hero by id. Will 404 if id not found
      *
@@ -50,8 +62,10 @@ export class HeroService {
         const url = `${this.heroesUrl}/${id}`;
         return this.http.get<Hero>(url).pipe(
             tap(() => this.log(`fetched hero with id: ${id}`)),
-            catchError(this.handleError<Hero>(`getHero id=${id}`))
-        );
+            catchError((err) => {
+                this.handleError<Hero>(`getHero id=${id}`);
+                throw err;
+            }));
     }
 
     /**
