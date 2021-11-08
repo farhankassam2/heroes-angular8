@@ -44,6 +44,8 @@ export class HeroService {
                 return resolve(true);
             } catch (err) {
                 return resolve(false);
+                // caller expects false in the case that hero does not exist, which is the case if
+                // the above call to await this.getHero(heroId) throws an error
             }
         });
     }
